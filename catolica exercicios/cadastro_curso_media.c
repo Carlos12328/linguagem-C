@@ -1,15 +1,22 @@
+/*
+Problema: Cadastro de Curso e Aluno
+
+Este programa coleta informa√ß√µes sobre um curso e um candidato, incluindo:
+- Nome do curso
+- Turno (Manh√£, Tarde ou Noite)
+- Matr√≠cula do aluno
+- Nome do candidato
+- Duas notas
+
+Ap√≥s a entrada dos dados, o programa calcula a m√©dia das notas e exibe um resumo com todas as informa√ß√µes inseridas e a m√©dia calculada.
+*/
+
 #include <stdio.h>
 #include <locale.h>
-
-/*Programa que lÍ as infomaÁıes sobre um
- curso, calcula a mÈdia, limpa a tela 
- imprime todas as informaÁıes*/
 
 char t[1];
 char nomedocurso[20], nomecand[20];
 float matricula, n1, n2, media;
-
-
 
 main(void){
 	setlocale(LC_ALL,"  ");
@@ -25,7 +32,7 @@ main(void){
 	fflush(stdin);
 	gets(nomecand);
 		
-		
+	
 	printf("Primeira nota:");
 	scanf("%f", &n1);
 	printf("segunda nota:");

@@ -1,15 +1,32 @@
+/*
+Problema - Cadastro de Alunos com M√©dia
+
+Crie um programa que permita cadastrar alunos, armazenando:
+- Nome
+- Nota da N1
+- Nota da N2
+- M√©dia das notas
+- Situa√ß√£o (Aprovado ou Reprovado)
+
+O programa deve perguntar quantos alunos ser√£o cadastrados, 
+ler as informa√ß√µes de cada um e, ao final, exibir todos os dados.
+
+Regra de aprova√ß√£o:
+- M√©dia maior ou igual a 7 ‚Üí Aprovado
+- M√©dia menor que 7 ‚Üí Reprovado
+*/
+
 //Feito por Carlos Eduardo Rodrigues de Carvalho 12/09/24 23:54
 
 #include <stdio.h>
 #include <locale.h>
-/*Biblioteca usada para manipular strings(texto)*/
+/*Biblioteca usada para manipular strings (texto)*/
 #include <string.h>
-
 
 int qnt, i;
 
 main (void){ 
-	
+    	
     setlocale(LC_ALL, "");
     
     printf("***********************************************\n");
@@ -19,26 +36,24 @@ main (void){
     system ("pause");
     system ("cls");
     
-    printf("Digite a quantidade de alunos que ir· ser cadastrados: ");
+    printf("Digite a quantidade de alunos que ira ser cadastrados: ");
     	scanf("%i", &qnt);
     	
     system ("cls");
     
-    
     float n1[qnt], n2[qnt]; 
 	float media[qnt];
-	/*o primeiro "[]" È para definir a quantidade de vari·veis existentes
-	o segundo "[]" È para definir a quantidade de caracteres de cada vari·vel*/
+	/*o primeiro "[]" √© para definir a quantidade de vari√°veis existentes
+	o segundo "[]" √© para definir a quantidade de caracteres de cada vari√°vel*/
 	char nome[qnt][30], situacao[qnt][15];
 	
-    
-    /*for (define o valor inicial da vari·vel; a regra de repetiÁ„o;
-	define a regra de implementaÁ„o)*/
+    /*for (define o valor inicial da vari√°vel; a regra de repeti√ß√£o;
+	define a regra de implementa√ß√£o)*/
     for (i = 1; i <= qnt; i++){
     	
-		printf("Escreva o nome do %i∫ aluno: ", i);
+		printf("Escreva o nome do %i¬∫ aluno: ", i);
 			fflush(stdin);
-			/*nome[i]: o [i] define em qual posiÁ„o a memoria vai ficar*/
+			/*nome[i]: o [i] define em qual posi√ß√£o a mem√≥ria vai ficar*/
 			fgets(nome[i],30,stdin);
 		
 		printf("Nota da N1: ");
@@ -49,8 +64,7 @@ main (void){
 			
 		media[i] = (n1[i] + n2[i])/ 2;
 		
-		
-		/*Func„o strcpy È para copiar string para dentro de uma vari·vel*/
+		/*Fun√ß√£o strcpy √© para copiar string para dentro de uma vari√°vel*/
 		if (media[i] >= 7){
 			strcpy(situacao[i], "Aprovado");
 		}else{
@@ -64,12 +78,10 @@ main (void){
 	
 	for (i = 1; i <= qnt; i++){
     	printf("-----------------------------\n");
-		printf("Aluno n∫ %i: %s\n",i, nome[i]);
+		printf("Aluno n¬∫ %i: %s\n",i, nome[i]);
     	printf("N1 desse estudante: %.2f\n", n1[i]);			
 		printf("N2 desse estudante: %.2f\n", n2[i]);
-		printf("MÈdia = %.2f\n\n", media[i]);
-		printf("SituaÁ„o: %s\n\n", situacao[i]);
-		
+		printf("M√©dia = %.2f\n\n", media[i]);
+		printf("Situa√ß√£o: %s\n\n", situacao[i]);
 	}
-	 
 }

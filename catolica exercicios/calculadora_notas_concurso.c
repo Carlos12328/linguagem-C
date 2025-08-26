@@ -1,19 +1,23 @@
+/*
+Problema - Calculadora de Notas de Concurso
+
+Este programa calcula a m√©dia de duas notas de um concurso e informa 
+se o candidato foi aprovado ou reprovado.
+
+Fluxo do programa:
+1. O usu√°rio informa o turno (Matutino, Vespertino ou Noturno).
+2. O programa solicita o nome do concurso, hor√°rio, matr√≠cula, 
+   nome do candidato e as notas.
+3. Calcula a m√©dia das duas notas.
+4. Exibe todas as informa√ß√µes e a situa√ß√£o (Aprovado ou Reprovado).
+*/
+
 #include <stdio.h>
-#include<locale.h>
+#include <locale.h>
+#include <string.h> // Necess√°ria para strcpy e strcasecmp
 
-/* 
-
-Este programa calcula a mÈdia de duas notas de um concurso 
-e informa se o candidato foi aprovado ou reprovado.
-
-Ele solicita o turno, nome do concurso, hor·rio, matrÌcula, 
-nome do candidato e as notas.
-
-Em seguida, exibe todas as informaÁıes e a mÈdia calculada.*/
-
-
-char letraTurno[2],turno[10], horario[6];
-char nomeConcurso [30], nomeCandidato[20], matricula[10];
+char letraTurno[2], turno[10], horario[6];
+char nomeConcurso[30], nomeCandidato[20], matricula[10];
 float nota1, nota2, media;
 
 main(void){
@@ -21,7 +25,7 @@ main(void){
 	setlocale(LC_ALL, "");
 	
 	printf("********************************************************\n");
-	printf("***Bem vindo a calculadora de notas do seu concurso!!***\n");
+	printf("*** Bem vindo √† calculadora de notas do seu concurso! ***\n");
 	printf("********************************************************\n\n");
 	system("pause");
 	system("cls");
@@ -29,26 +33,26 @@ main(void){
 	printf("Digite a letra referente ao seu turno: ");
 		scanf(" %c", &letraTurno);
 	
-	//strcasecmp È para comparar strings verificando mesmo se for maiuscula ou minuscula
-	//strcpy È para atribuir um texto(string) numa vari·vel
-	 if (strcasecmp(&letraTurno, "M") == 0) {
+	// strcasecmp = compara strings sem diferenciar mai√∫scula de min√∫scula
+	// strcpy = atribui um texto (string) a uma vari√°vel
+	if (strcasecmp(&letraTurno, "M") == 0) {
         strcpy(turno, "Matutino");
     } else if (strcasecmp(&letraTurno, "V") == 0) {
         strcpy(turno, "Vespertino");
     } else {
         strcpy(turno, "Noturno");
     }
-    printf("\nVocÍ selecionou o turno: %s\n", turno);
+    printf("\nVoc√™ selecionou o turno: %s\n", turno);
 	
 	printf("\nDigite o nome do concurso: ");
 		fflush(stdin);
 		fgets(nomeConcurso,20,stdin);
 	
-	printf("\nDigite o horario do seu concurso: ");
+	printf("\nDigite o hor√°rio do seu concurso: ");
 		fflush(stdin);
 		scanf("%s", horario);
 	
-	printf("\nDigite sua matricula: ");
+	printf("\nDigite sua matr√≠cula: ");
 		fflush(stdin);
 		fgets(matricula,10,stdin);
 	
@@ -56,8 +60,6 @@ main(void){
 		fflush(stdin);
 		fgets(nomeCandidato,20,stdin);
 	system("cls");
-	
-	
 	
 	printf("\nDigite a primeira nota: ");
 		scanf("%f", &nota1);
@@ -69,22 +71,18 @@ main(void){
 	
 	system("cls");
 	
-	
 	printf("Nome do aluno: %s", nomeCandidato);
-	printf("MatrÌcula: %s", matricula);
+	printf("Matr√≠cula: %s", matricula);
 	printf("Nome do concurso: %s\n", nomeConcurso);
 	printf("Turno: %s\n", turno);
-	printf("Hor·rio: %s\n\n", horario);
+	printf("Hor√°rio: %s\n\n", horario);
 	printf("Nota 1 = %.2f\n", nota1);
 	printf("Nota 2 = %.2f\n", nota2);
-	printf("MÈdia = %.2f\n", media);
+	printf("M√©dia = %.2f\n", media);
 	
-	if (media >=7){
-		printf("VocÍ est· aprovado!!!!");
+	if (media >= 7){
+		printf("Voc√™ est√° aprovado!!!!");
 	}else{
-		printf("VocÍ est· reprovado!!!!!");
+		printf("Voc√™ est√° reprovado!!!!!");
 	}
-	
-	
 }
-

@@ -1,3 +1,19 @@
+/*
+Biblioteca de Cadastro de Alunos
+
+Este arquivo de cabeçalho define as estruturas de dados e as funções
+para cadastrar e imprimir informações de alunos.
+
+Variáveis Globais:
+- nome: Array para armazenar os nomes de até 3 alunos.
+- n1, n2, media: Arrays para armazenar as notas e a média de 4 alunos (índices 1 a 3 são usados).
+- i: Variável de controle para loops.
+
+Funções:
+- cadastro(): Coleta o nome e as duas notas de 3 alunos, calcula a média e armazena nos arrays.
+- impressao(): Exibe os dados (nome, notas, média) dos 3 alunos cadastrados.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,7 +37,7 @@ void cadastro(){
 		
 		system("cls");
 			
-	}		
+	}	
 }
 
 void impressao(){
